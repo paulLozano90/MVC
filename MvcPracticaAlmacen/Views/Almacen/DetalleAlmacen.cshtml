@@ -1,0 +1,27 @@
+﻿@model MvcPracticaAlmacen.Models.Almacen
+
+@{
+    ViewBag.Title = "DetalleAlmacen";
+}
+
+<h3>Detalles del almacen</h3>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ciudad)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ciudad)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.codPostal)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.codPostal)
+    </dd>
+</dl>
+
+@Html.ActionLink("Volver", "IndexAlmacen")

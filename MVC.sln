@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcEjemplo", "MvcEjemplo\MvcEjemplo.csproj", "{D57AC851-4A93-4404-9C62-1F6A6ACEBBB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPracticaAlmacen", "MvcPracticaAlmacen\MvcPracticaAlmacen.csproj", "{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D57AC851-4A93-4404-9C62-1F6A6ACEBBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57AC851-4A93-4404-9C62-1F6A6ACEBBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57AC851-4A93-4404-9C62-1F6A6ACEBBB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

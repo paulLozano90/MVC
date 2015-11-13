@@ -1,0 +1,48 @@
+﻿@model MvcPracticaAlmacen.Models.Almacen
+
+@{
+    ViewBag.Title = "Borrar Almacen";
+}
+
+<h3>¿Estas seguro de que quieres borrar este almacen?</h3>
+<div>
+    <hr/>
+    <h4>Detalles del almacen</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codPostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codPostal)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default"/> |
+            @Html.ActionLink("Volver a la lista", "IndexAlmacen")
+        </div>
+    }
+</div>
+<script>
+    $("borrarAlmacen").click(function() {
+        var r = confirm("¿Estas seguro?");
+        if (r) {
+            var id = $(this).attr("data-id");
+            location.href = "/Almacen/Borrar/" + id;
+        }
+    })
+</script>

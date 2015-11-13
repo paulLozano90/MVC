@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcPracticaAlmacen.Models.Almacen>
+
+@{
+    ViewBag.Title = "Index Almacen";
+}
+
+<h2>Listado de almacenes</h2>
+<hr />
+@foreach (var item in Model)
+{
+    <div class="col-md-4">
+        @Html.DisplayNameFor(o => o.ciudad)
+        @Html.DisplayFor(o => item.ciudad)<br/>
+        @Html.DisplayNameFor(o => o.codPostal)
+        @Html.DisplayFor(o => item.codPostal)<br />
+        @Html.ActionLink("Ver", "DetalleAlmacen", new { id = item.idAlmacen }) |
+        @Html.ActionLink("Editar", "ModificarAlmacen", new { id = item.idAlmacen }) |
+        @Html.ActionLink("Borrar", "BorrarAlmacen", new { id = item.idAlmacen })
+    </div>
+}

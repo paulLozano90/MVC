@@ -1,0 +1,7 @@
+﻿
+Vista con todos los productos
+donde habra dos botones, borrar y editar.
+
+Cuando le damos a editar, nos saldra un formulario
+donde podremos editar todos los campos.
+
