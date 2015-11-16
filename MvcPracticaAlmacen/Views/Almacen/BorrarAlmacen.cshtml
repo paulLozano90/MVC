@@ -37,12 +37,3 @@
         </div>
     }
 </div>
-<script>
-    $("borrarAlmacen").click(function() {
-        var r = confirm("¿Estas seguro?");
-        if (r) {
-            var id = $(this).attr("data-id");
-            location.href = "/Almacen/Borrar/" + id;
-        }
-    })
-</script>

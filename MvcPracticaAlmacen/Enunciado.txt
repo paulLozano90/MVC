@@ -5,3 +5,8 @@ donde habra dos botones, borrar y editar.
 Cuando le damos a editar, nos saldra un formulario
 donde podremos editar todos los campos.
 
+Pagina donde salga cada etiqueta con un listado de los
+productos que lleven esa etiqueta...
+
+En la misma pagina aparezca el listado de los almacenes
+Algo que fitre que solo funcione 10 minutos

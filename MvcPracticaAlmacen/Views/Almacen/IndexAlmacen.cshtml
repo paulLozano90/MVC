@@ -8,13 +8,31 @@
 <hr />
 @foreach (var item in Model)
 {
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         @Html.DisplayNameFor(o => o.ciudad)
         @Html.DisplayFor(o => item.ciudad)<br/>
         @Html.DisplayNameFor(o => o.codPostal)
         @Html.DisplayFor(o => item.codPostal)<br />
         @Html.ActionLink("Ver", "DetalleAlmacen", new { id = item.idAlmacen }) |
-        @Html.ActionLink("Editar", "ModificarAlmacen", new { id = item.idAlmacen }) |
-        @Html.ActionLink("Borrar", "BorrarAlmacen", new { id = item.idAlmacen })
-    </div>
+        @Html.ActionLink("Editar", "ModificarAlmacen", new {id = item.idAlmacen}) |
+        @*Borra directamente:*@
+        @*@Html.ActionLink("Borrar", "BorrarAlmacen", new { id = item.idAlmacen })*@
+        @*Borra preguntando al usuario:*@
+        @*Las etiquetas data-id se usan para que personalicemos el comportamiento*@
+        @*<input type="button" value="Borrar" id="borrarAlmacen" class="btn btn-default" data-id="@item.idAlmacen"/>*@
+        @*<a href="#" class="borrarAlmacen" data-id="@item.idAlmacen">Borrar</a>
+    </div>*@
+
+    @Html.Partial("_fichaAlmacen", item)
+}
+@section MiJavaScript{
+    <script>
+    $(".borrarAlmacen").click(function() {
+        var r = confirm("¿Estas seguro?");
+        if (r) {
+            var id = $(this).attr("data-id");
+            location.href = "@Url.Action("BorrarAlmacen")" + "/" + id;
+        }
+    })
+    </script>
 }

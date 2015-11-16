@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .item {
+            border: 1px solid blue;
+            border-radius: 5px 5px;
+            margin: 5px;
+            padding-bottom: 10px;
+        }
+    </style>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -28,13 +36,19 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        <hr style="clear: both;"/>
+        <footer style="clear: both">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @* Esto hara que se carge los script, si no lo ponemos habria que 
+    poner los scripts arriba porque si no nos dara un error. El false 
+    hace que esto sea opcional, ya que si estan lo hara, si no, no.
+    Tendremos que darle un nombre, el cual especificaremos antes del
+    script donde metamos el codigo*@
+    @RenderSection("MiJavaScript",false)
 </body>
 </html>

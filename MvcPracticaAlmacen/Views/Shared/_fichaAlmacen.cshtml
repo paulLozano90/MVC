@@ -1,0 +1,17 @@
+﻿@model MvcPracticaAlmacen.Models.Almacen
+    
+<div class="col-md-4 item">
+    @Html.DisplayNameFor(o => o.ciudad)
+    @Html.DisplayFor(o => Model.ciudad)<br />
+    @Html.DisplayNameFor(o => o.codPostal)
+    @Html.DisplayFor(o => Model.codPostal)<br/>
+    @*No tiene porque ser otra ventana, puede ser un valor null*@
+    @Html.ActionLink("Ver", "DetalleAlmacen","Almacen", new { id = Model.idAlmacen }, null) |
+    @Html.ActionLink("Editar", "ModificarAlmacen", "Almacen", new { id = Model.idAlmacen }, new { target = "_blank" }) |
+    @*Borra directamente:*@
+    @*@Html.ActionLink("Borrar", "BorrarAlmacen", new { id = Model.idAlmacen })*@
+    @*Borra preguntando al usuario:*@
+    @*Las etiquetas data-id se usan para que personalicemos el comportamiento*@
+    @*<input type="button" value="Borrar" id="borrarAlmacen" class="btn btn-default" data-id="@Model.idAlmacen"/>*@
+    <a href="#" class="borrarAlmacen" data-id="@Model.idAlmacen">Borrar</a>
+</div>

@@ -13,7 +13,7 @@ namespace MvcPracticaAlmacen.Controllers
 
         // GET: Producto
 
-        public ActionResult Index()
+        public ActionResult IndexProducto()
         {
             var data = db.Producto;
             return View(data);

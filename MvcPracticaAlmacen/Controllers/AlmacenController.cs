@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcPracticaAlmacen.Filtros;
 using MvcPracticaAlmacen.Models;
 
 namespace MvcPracticaAlmacen.Controllers
@@ -11,15 +12,20 @@ namespace MvcPracticaAlmacen.Controllers
     public class AlmacenController : Controller
     {
         private Tienda19Entities db = new Tienda19Entities();
-
+        
         // GET: Almacen
 
         public ActionResult IndexAlmacen()
         {
+            var info = db.Etiquetas;
+
+            ViewBag.etiquetas = info.ToList();
+            ViewData["Titulo"] = "Listado de almacenes";
+
             var data = db.Almacen;
             return View(data);
         }
-
+        [FiltroId]
         public ActionResult DetalleAlmacen(int id)
         {
             var data = db.Almacen.Find(id);
@@ -27,6 +33,7 @@ namespace MvcPracticaAlmacen.Controllers
         }
 
         //Modificar:
+        [FiltroId]
         public ActionResult ModificarAlmacen(int id)
         {
             var data = db.Almacen.Find(id);
@@ -50,6 +57,7 @@ namespace MvcPracticaAlmacen.Controllers
         //Se puede borrar de dos maneras:
 
         //Borrarlo directamente
+        [FiltroId]
         public ActionResult BorrarAlmacen(int id)
         {
             var data = db.Almacen.Find(id);

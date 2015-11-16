@@ -1,0 +1,25 @@
+﻿
+@using MvcPracticaAlmacen.Models
+@model IEnumerable<MvcPracticaAlmacen.Models.Etiquetas>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Etiquetas</h2>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 item">
+        @Html.DisplayNameFor(o => o.nombre)
+        @Html.DisplayFor(o => item.nombre)
+
+        <h5>Moviles asociados:</h5>
+
+        @foreach (var productos in item.Producto)
+        {
+            @Html.Partial("_fichaProducto", productos.nombre)
+        }
+
+    </div>
+}
