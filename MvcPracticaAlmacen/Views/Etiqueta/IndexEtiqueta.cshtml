@@ -3,23 +3,34 @@
 @model IEnumerable<MvcPracticaAlmacen.Models.Etiquetas>
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Etiquetas";
+    var alm = ViewBag.Almacenes as IEnumerable<Almacen>;
 }
+<div class="col-md-8">
+    <h2>Etiquetas</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 item">
+            @Html.DisplayNameFor(o => o.nombre)
+            @Html.DisplayFor(o => item.nombre)
 
-<h2>Etiquetas</h2>
-
-@foreach (var item in Model)
-{
-    <div class="col-md-4 item">
-        @Html.DisplayNameFor(o => o.nombre)
-        @Html.DisplayFor(o => item.nombre)
-
-        <h5>Moviles asociados:</h5>
-
-        @foreach (var productos in item.Producto)
+            <h5>Moviles asociados:</h5>
+            <ul>
+                @foreach (var productos in item.Producto)
+                {
+                    <li>@productos.nombre</li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+<div class="col-md-4">
+    <h2>Almacenes</h2>
+    <ul>
+        @foreach (var almacen in alm)
         {
-            @Html.Partial("_fichaProducto", productos.nombre)
+            <li>@almacen.ciudad</li>
         }
+    </ul>
+</div>
 
-    </div>
-}
