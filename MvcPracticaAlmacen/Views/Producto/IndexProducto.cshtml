@@ -14,7 +14,7 @@
     <div class="col-md-4 item">
         @Html.DisplayNameFor(o => o.nombre)
         @Html.DisplayFor(o => item.nombre)
-        @Html.ActionLink("Ver", "Detalle", new { id = item.idProducto })
+        @Html.ActionLink("Ver", "DetalleProducto", new { nombreProducto = item.nombre.Replace(" ","_") })
         
         <h5>Almacenes disponibles</h5>
 
@@ -22,6 +22,6 @@
         {
             @Html.Partial("_fichaAlmacen", alm.Almacen)
         }
+        
     </div>
 }
-

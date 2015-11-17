@@ -19,11 +19,19 @@ namespace MvcPracticaAlmacen.Controllers
             return View(data);
         }
 
-        public ActionResult Detalle(int id)
+        public ActionResult DetalleProducto(String nombreProducto)
         {
-            var data = db.Producto.Find(id);
+            var nom = nombreProducto.Replace("_", " ");
+            //Lo mejor no es remplazarlo, es hacer un campo en la 
+            //base de datos que este el nombre sin espacios...
+            var data = db.Producto.FirstOrDefault(o => o.nombre == nom);
+
+            if (data == null)
+            {
+                return RedirectToAction("IndexProducto");
+            }
+
             return View(data);
         }
-        
     }
 }
