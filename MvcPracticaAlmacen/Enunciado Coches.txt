@@ -1,0 +1,11 @@
+﻿
+Una tabla vehiculos -- idvehiculo,matricula, marca,modelo,coste, tipoVehiculo
+Una tabla tipo -- id, nombre
+
+Listado de tipos de vehiculos
+Hacer alta de tipos vehiculos
+
+Cada tipo tenga un enlace que te permita
+cargar ese los vehiculos de ese mismo tipo
+
+En una pantalla ordenar por matricula y por marca

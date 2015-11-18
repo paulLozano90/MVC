@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E9AA35C5-7F9D-4F2D-B081-D027E407E5D8}</ProjectGuid>
+    <ProjectGuid>{47B86E20-7973-4D55-8071-EEF491CB0BE8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvcPracticaAlmacen</RootNamespace>
-    <AssemblyName>MvcPracticaAlmacen</AssemblyName>
+    <RootNamespace>MvcPracticaVehiculos</RootNamespace>
+    <AssemblyName>MvcPracticaVehiculos</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -103,20 +103,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Enunciado Coches.txt" />
-    <Content Include="Enunciado.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ModelAlmacen.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelAlmacen.edmx</DependentUpon>
-      <LastGenOutput>ModelAlmacen.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelAlmacen.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelAlmacen.edmx</DependentUpon>
-      <LastGenOutput>ModelAlmacen.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Pasos.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -132,74 +130,51 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Producto\IndexProducto.cshtml" />
-    <Content Include="Views\Producto\DetalleProducto.cshtml" />
-    <Content Include="Views\Almacen\IndexAlmacen.cshtml" />
-    <Content Include="Views\Almacen\DetalleAlmacen.cshtml" />
-    <Content Include="Views\Almacen\BorrarAlmacen.cshtml" />
-    <Content Include="Views\Almacen\ModificarAlmacen.cshtml" />
+    <Content Include="Views\Tipo\ModificarTipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AlmacenController.cs" />
-    <Compile Include="Controllers\EtiquetaController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Controllers\ProductosAjaxController.cs" />
-    <Compile Include="Filtros\FilfroTiempo.cs" />
-    <Compile Include="Filtros\FiltroId.cs" />
+    <Compile Include="Controllers\TipoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Almacen.cs">
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categoria.cs">
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Etiquetas.cs">
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelAlmacen.Context.cs">
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAlmacen.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelAlmacen.cs">
+    <Compile Include="Models\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelAlmacen.Designer.cs">
+    <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAlmacen.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Producto.cs">
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
+    <Compile Include="Models\TipoVehiculo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductoAlmacen.cs">
-      <DependentUpon>ModelAlmacen.tt</DependentUpon>
+    <Compile Include="Models\Vehiculo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\ModelAlmacen.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelAlmacen.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelAlmacen.edmx.diagram">
-      <DependentUpon>ModelAlmacen.edmx</DependentUpon>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Tipo\IndexTipo.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Shared\_fichaAlmacen.cshtml" />
-    <Content Include="Views\Etiqueta\IndexEtiqueta.cshtml" />
-    <Content Include="Views\Shared\_fichaProducto.cshtml" />
-    <Content Include="Views\ProductosAjax\Index.cshtml" />
-    <Content Include="Views\ProductosAjax\_listadoProducto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,9 +201,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49803</DevelopmentServerPort>
+          <DevelopmentServerPort>57033</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49803/</IISUrl>
+          <IISUrl>http://localhost:57033/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
