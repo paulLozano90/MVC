@@ -1,0 +1,97 @@
+﻿@model IEnumerable<MvcPracticaAlmacen.Models.Producto>
+
+@{
+    ViewBag.Title = "Lista productos";
+}
+
+<h2>Lista de productos</h2>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@*<input type="text" id="txtBusqueda" placeholder="Modelo"/>
+<input type="button" id="btnBusqueda" value="Buscar"/>*@
+
+<form role="search" style="width: 15em; margin: 1.3em 0em;">
+    <div class="input-group">
+        <input type="text" id="txtBusqueda" class="form-control" placeholder="Buscar">
+        <div class="input-group-btn">
+            <button type="button" id="btnBusqueda" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+    </div>
+</form> 
+
+<div class="row" id="listado" style="margin: 1.3em 0em;">
+    @Html.Partial("_listadoProducto", Model)
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divAdd">Añadir nuevo producto</button>
+
+<!-- Modal -->
+<div class="modal fade" id="divAdd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Nuevo producto</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <input type="text" id="txtNom" placeholder="Modelo"/><br/>
+                    <input type="text" id="txtFabricante" placeholder="Fabricante"/><br/>
+                    <input type="text" id="txtCoste" placeholder="Precio coste"/><br/>
+                    <input type="text" id="txtVenta" placeholder="Precio venta"/><br/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardar" data-dismiss="modal">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section MiJavaScript{
+    <script>
+        function alta() {
+            var data = {
+                nombre: $("#txtNom").val(),
+                fabricante: $("#txtFabricante").val(),
+                precioCompra: $("#txtCoste").val(),
+                precioVenta: $("#txtVenta").val(),
+                idCategoria: 1
+            };
+
+            var url = "@Url.Action("Alta")";
+            $.ajax({
+                url: url,
+                data: JSON.stringify(data),
+                type: "POST",
+                headers: { "Content-Type": "application/json" },
+                dataType: "json",
+                success: function (res) {
+                    if (res.idProducto > 0) {
+                        //alert("Guardado");
+                        $("#divAdd").modal("hide");
+                        $("#txtBusqueda").val("");
+                        listado();
+                    } else {
+                        alert("Error al guardar");
+                    }
+                }
+            });
+        }
+        function listado() {
+
+            var url = "@Url.Action("Buscar")";
+            var txt = $("#txtBusqueda").val();
+            url += "?nombre=" + txt;
+
+            $("#listado").load(encodeURI(url));
+        }
+        $("#btnBusqueda").click(listado);
+        $("#btnGuardar").click(alta);
+    </script>
+}
