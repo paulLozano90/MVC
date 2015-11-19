@@ -25,6 +25,17 @@ namespace MvcPracticaVehiculos
             );
 
             routes.MapRoute(
+                name: "BuscarVehiculo",
+                url: "Vehiculo/Buscar/{idTipo}/{campo}/{contenido}",
+                defaults: new
+                {
+                    controller = "Vehiculo",
+                    action = "BuscarVehiculo",
+                    nombre = UrlParameter.Optional
+                }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Tipo",

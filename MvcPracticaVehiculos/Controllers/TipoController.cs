@@ -19,6 +19,23 @@ namespace MvcPracticaVehiculos.Controllers
             return View(data);
         }
 
+        public ActionResult AltaTipo()
+        {
+            return View(new TipoVehiculo());
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AltaTipo(TipoVehiculo model)
+        {
+            if (ModelState.IsValid)
+            {
+                db.TipoVehiculo.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("IndexTipo");
+            }
+            return View(model);
+        }
+
         public ActionResult ModificarTipo(String nombreTipo)
         {
             var nom = nombreTipo.Replace("_", " ");
@@ -45,6 +62,7 @@ namespace MvcPracticaVehiculos.Controllers
             }
             return View(model);
         }
+
         public ActionResult BorrarTipo(string nombreTipo)
         {
             var nom = nombreTipo.Replace("_", " ");
@@ -58,6 +76,5 @@ namespace MvcPracticaVehiculos.Controllers
             db.SaveChanges();
             return RedirectToAction("IndexTipo");
         }
-
     }
 }

@@ -7,10 +7,9 @@
 }
 
 <h2>Tipos de vehiculos</h2>
-<div class="container">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divAdd">Añadir nuevo tipo de vehiculo</button>
-</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divAdd">Añadir nuevo tipo de vehiculo(Model)</button>
+<button type="button" class="btn btn-info" >@Html.ActionLink("Añadir nuevo tipo de vehiculo (ActionLink)", "AltaTipo")</button>
 <div class="container">
     <div class="row">
         @foreach (var tipo in Model)
@@ -24,19 +23,20 @@
                     @Html.DisplayFor(o => tipo.descripcionTipo)
                     <br/>
                 </div>
+                @Html.ActionLink("Ver vehiculos", "IndexVehiculo", "Vehiculo", new { idTipo = tipo.idTipo }, null) |
                 @Html.ActionLink("Modificar", "ModificarTipo", new {nombreTipo = tipo.nombreTipo}) |
-                @Html.ActionLink("Borrar", "BorrarTipo", new {nombreTipo = tipo.nombreTipo})
+                @Html.ActionLink("Borrar", "BorrarTipo", new { nombreTipo = tipo.nombreTipo })
             </div>
         }
     </div>
 </div>
-<!-- Modal -->
+<!-- Modal Añadir-->
 <div class="modal fade" id="divAdd">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Nuevo tipo de vehiculo</h4>
+                <h4 class="modal-title" id="divAddLabel">Nuevo tipo de vehiculo</h4>
             </div>
             <div class="modal-body">
                 <div>
@@ -54,12 +54,26 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" id="btnGuardar" data-dismiss="modal">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Borrar-->
+<div class="modal fade" id="divDelete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="divDeleteLabel">¿Esta seguro de que quiere borrar el tipo?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No, no quiero</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"></button>
             </div>
         </div>
     </div>
