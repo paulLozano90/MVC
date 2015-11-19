@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
 namespace MvcPracticaVehiculos.Models
 {
     using System;
@@ -19,9 +22,13 @@ namespace MvcPracticaVehiculos.Models
         {
             this.Vehiculo = new HashSet<Vehiculo>();
         }
-    
+
         public int idTipo { get; set; }
+        [Required(ErrorMessage = "El nombre del tipo es obligatorio")]
+        [DisplayName("Nombre: ")]
         public string nombreTipo { get; set; }
+        [Required(ErrorMessage = "La descripcion es obligatoria")]
+        [DisplayName("Descripcion: ")]
         public string descripcionTipo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
