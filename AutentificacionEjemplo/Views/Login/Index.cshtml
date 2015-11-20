@@ -1,0 +1,17 @@
+﻿@model AutentificacionEjemplo.Models.Usuario
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Login</h2>
+
+@Html.ValidationSummary(false)
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(o => o.Login)<br/>
+    @Html.EditorFor(o => o.Login)<br/><br/>
+    @Html.LabelFor(o => o.Password)<br />
+    @*@Html.EditorFor(o => o.Password)<br/><br/>*@
+    @Html.PasswordFor(o => o.Password)<br /><br />
+    <input type="submit" value="Ok"/>
+}
