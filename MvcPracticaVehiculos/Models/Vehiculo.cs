@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
 namespace MvcPracticaVehiculos.Models
 {
     using System;
@@ -16,9 +19,18 @@ namespace MvcPracticaVehiculos.Models
     {
         public int idVehiculo { get; set; }
         public int idTipo { get; set; }
+        [Required(ErrorMessage = "La matricula es obligatoria")]
+        [DisplayName("Matricula")]
         public string matricula { get; set; }
+        [Required(ErrorMessage = "El modelo es obligatorio")]
+        [DisplayName("Modelo")]
         public string modelo { get; set; }
+        [Required(ErrorMessage = "La marca es obligatoria")]
+        [DisplayName("Marca")]
         public string marca { get; set; }
+        [DisplayName("Precio de coste")]
+        [Required(ErrorMessage = "La marca es obligatoria")]
+        [DataType(DataType.Currency)]
         public Nullable<int> coste { get; set; }
     
         public virtual TipoVehiculo TipoVehiculo { get; set; }
