@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,8 +13,10 @@ namespace AutenticacionPractica.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var cifrado = SeguridadUtilidades.Cifrar("Hola Amigo", "AAA");
-            var descrifrado = SeguridadUtilidades.DesCifrar(cifrado, "AAA");
+            var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
+            var cifrado = SeguridadUtilidades.Cifrar("Hola Amigo", clave);
+            var data = Convert.FromBase64String(cifrado);
+            var descrifrado = SeguridadUtilidades.DesCifrar(data, clave);
             return View();
         }
     }
