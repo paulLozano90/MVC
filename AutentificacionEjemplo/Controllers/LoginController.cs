@@ -23,7 +23,7 @@ namespace AutentificacionEjemplo.Controllers
         {
             if (model.Login == model.Password)
             {
-                //Identidad del usuario. Solo recibe el nombre del usuario
+                //Identidad del usuario. Solo recibe el nombre el usuario
                 var iden = new GenericIdentity(model.Login);
                 //Tiene que almacenar la identidad del usuario y la lista de roles
                 //que tiene cada usuario, ya sea un admin o un usuario normal.

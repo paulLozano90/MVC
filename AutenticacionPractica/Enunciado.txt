@@ -1,0 +1,6 @@
+﻿
+Tabla de usuarios
+Tabla de roles
+Tabla de menus
+Tabla roles/menu
+

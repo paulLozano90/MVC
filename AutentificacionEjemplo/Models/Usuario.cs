@@ -9,6 +9,5 @@ namespace AutentificacionEjemplo.Models
         public string Login { get; set; }
         [DisplayName("Contraseña:")]
         public string Password { get; set; }
-
     }
 }

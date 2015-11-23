@@ -10,6 +10,8 @@ namespace AutentificacionEjemplo.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        //Se pueden autorizar tanto roles como usuarios
+        [Authorize (Roles = "Admin")]
         public ActionResult Index()
         {
             return View();
