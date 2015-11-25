@@ -21,15 +21,21 @@ namespace AutenticacionPractica.Controllers
         [HttpPost]
         public ActionResult Index(Usuario model)
         {
-            var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
+            //var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
             if (Membership.ValidateUser(model.login, model.password))
             {
-                var login = SeguridadUtilidades.DesCifrar(Convert.FromBase64String(model.login), clave);
+                //var login = SeguridadUtilidades.DesCifrar(Convert.FromBase64String(model.login), clave);
                 //Si lo pones a true, se te guardaria el inicio de sesion
-                FormsAuthentication.RedirectFromLoginPage(login, false);
+                FormsAuthentication.RedirectFromLoginPage(model.login, false);
                 return null;
             }
-            return View();
+            return View(model);
+        }
+
+        public ActionResult LogoOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
     }
 }

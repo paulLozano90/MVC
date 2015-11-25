@@ -48,7 +48,7 @@ namespace AutenticacionPractica.Seguridad
                 //var login = SeguridadUtilidades.Cifrar(username, clave);
                 var pass = SeguridadUtilidades.GetSha1(password);
 
-                return db.Usuario.Any(o => o.password == password && o.login == username);
+                return db.Usuario.Any(o => o.password == pass && o.login == username);
             }
         }
 
@@ -66,9 +66,9 @@ namespace AutenticacionPractica.Seguridad
         {
             using (var db = new AutenticacionEntities())
             {
-                var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
-                var login = SeguridadUtilidades.Cifrar(username, clave);
-                var user = db.Usuario.FirstOrDefault(o => o.login == login);
+                //var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
+                //var login = SeguridadUtilidades.Cifrar(username, clave);
+                var user = db.Usuario.FirstOrDefault(o => o.login == username);
 
                 if (user == null)
                 {
