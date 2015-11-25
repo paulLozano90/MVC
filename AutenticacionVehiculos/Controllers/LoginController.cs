@@ -24,7 +24,9 @@ namespace AutenticacionVehiculos.Controllers
             //var clave = ConfigurationManager.AppSettings["ClaveCifrado"];
             if (Membership.ValidateUser(model.login, model.password))
             {
-                //var login = SeguridadUtilidades.DesCifrar(Convert.FromBase64String(model.login), clave);
+                Session["horaLogin"] = DateTime.Now;
+                HttpContext.Application["horaPrueba"] = DateTime.Now;
+                TempData["horaTemporal"] = DateTime.Now;
                 //Si lo pones a true, se te guardaria el inicio de sesion
                 FormsAuthentication.RedirectFromLoginPage(model.login, false);
                 return null;
@@ -34,6 +36,10 @@ namespace AutenticacionVehiculos.Controllers
 
         public ActionResult LogoOff()
         {
+            //Borra la sesion
+            Session.Clear();
+            //Limpia las sesiones
+            Session.Abandon();
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }

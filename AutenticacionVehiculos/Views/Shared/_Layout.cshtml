@@ -48,15 +48,23 @@
             </div>
         </div>
     </div>
-
     <div class="container body-content">
+        @if (Session["horaLogin"] != null)
+        {
+            var d = (DateTime) Session["horaLogin"];
+            @String.Format("{0:t}", d)
+        }
+        @if (AppState["horaPrueba"] != null)
+        {
+            var d = (DateTime)Application["horaLogin"];
+            @String.Format("{0:t}", d)
+        }
         @RenderBody()
-        <hr />
+        <hr/>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("JS", false);
