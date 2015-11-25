@@ -1,0 +1,84 @@
+﻿
+@using AutenticacionVehiculos.Models
+@model IEnumerable<AutenticacionVehiculos.Models.TipoVehiculo>
+
+@{
+    ViewBag.Title = "Tipos Vehiculos";
+}
+
+<h2>Tipos de vehiculos</h2>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divAdd">Añadir nuevo tipo de vehiculo(Model)</button>
+<button type="button" class="btn btn-info" >@Html.ActionLink("Añadir nuevo tipo de vehiculo (ActionLink)", "AltaTipo")</button>
+<div class="container">
+    <div class="row">
+        @foreach (var tipo in Model)
+        {
+            <div class="col-sm-offset-1 col-md-4 tipo">
+                <div id="datosTipo">
+                    @Html.DisplayNameFor(o => o.nombreTipo)
+                    @Html.DisplayFor(o => tipo.nombreTipo)
+                    <br/>
+                    @Html.DisplayNameFor(o => o.descripcionTipo)
+                    @Html.DisplayFor(o => tipo.descripcionTipo)
+                    <br/>
+                </div>
+                @Html.ActionLink("Ver vehiculos", "IndexVehiculo", "Vehiculo", new { idTipo = tipo.idTipo }, null) |
+                @Html.ActionLink("Modificar", "ModificarTipo", new {nombreTipo = tipo.nombreTipo}) |
+                @Html.ActionLink("Borrar", "BorrarTipo", new { nombreTipo = tipo.nombreTipo })
+            </div>
+        }
+    </div>
+</div>
+<!-- Modal Añadir-->
+<div class="modal fade" id="divAdd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="divAddLabel">Nuevo tipo de vehiculo</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="txtNombreTipo" class="col-lg-2 control-label">Nombre</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="txtNombreTipo" placeholder="Ejemplo: Barco">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtDescripcionTipo" class="col-lg-2 control-label">Descripcion</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" id="txtDescripcionTipo" placeholder="Describa el vehiculo que va registrar" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardar" data-dismiss="modal">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Borrar-->
+<div class="modal fade" id="divDelete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="divDeleteLabel">¿Esta seguro de que quiere borrar el tipo?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No, no quiero</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

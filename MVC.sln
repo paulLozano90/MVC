@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutentificacionEjemplo", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticacionPractica", "AutenticacionPractica\AutenticacionPractica.csproj", "{A061B1F6-A4DF-4AC0-BB7E-F8E2B39349AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticacionVehiculos", "AutenticacionVehiculos\AutenticacionVehiculos.csproj", "{334D738C-9936-4AC3-B9D9-59F378003B01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A061B1F6-A4DF-4AC0-BB7E-F8E2B39349AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A061B1F6-A4DF-4AC0-BB7E-F8E2B39349AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A061B1F6-A4DF-4AC0-BB7E-F8E2B39349AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{334D738C-9936-4AC3-B9D9-59F378003B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334D738C-9936-4AC3-B9D9-59F378003B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334D738C-9936-4AC3-B9D9-59F378003B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334D738C-9936-4AC3-B9D9-59F378003B01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

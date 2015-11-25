@@ -1,0 +1,10 @@
+﻿
+1. Crear proyecto MVC
+
+2. Cargar modelo SQL
+
+3. Depurar
+
+4. Crear el controlador
+
+5. Crear las vistas
