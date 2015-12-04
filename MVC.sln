@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{8F17DC1C-50C5-414A-B136-F463F2B60D88}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticacionPractica", "AutenticacionPractica\AutenticacionPractica.csproj", "{A061B1F6-A4DF-4AC0-BB7E-F8E2B39349AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticacionVehiculos", "AutenticacionVehiculos\AutenticacionVehiculos.csproj", "{334D738C-9936-4AC3-B9D9-59F378003B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcIdiomas", "MvcIdiomas\MvcIdiomas.csproj", "{401A4CE3-8A96-4111-975A-58BA18B95E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{334D738C-9936-4AC3-B9D9-59F378003B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334D738C-9936-4AC3-B9D9-59F378003B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{334D738C-9936-4AC3-B9D9-59F378003B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401A4CE3-8A96-4111-975A-58BA18B95E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401A4CE3-8A96-4111-975A-58BA18B95E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401A4CE3-8A96-4111-975A-58BA18B95E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401A4CE3-8A96-4111-975A-58BA18B95E1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
